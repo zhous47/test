@@ -57,6 +57,7 @@
 <div class="wechat-share">
   <img src="/css/images/logo.png" />
 </div>
+
   <body>
     <header class="header fixed-header">
   <div class="header-container">
@@ -207,7 +208,9 @@
         'background-image': 'url(' + banner + ')'
       })
     } else {
-      $('#article-banner').geopattern(url)
+      var options = new Object()
+      options.color = "#ff6d00"
+      $('#article-banner').geopattern(url, options=options)
     }
     $('.header').removeClass('fixed-header')
 

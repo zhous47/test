@@ -57,6 +57,7 @@
 <div class="wechat-share">
   <img src="/css/images/logo.png" />
 </div>
+
   <body>
     <header class="header fixed-header">
   <div class="header-container">
@@ -135,7 +136,7 @@
       </a>
     
     
-      <a class="nav-right" href="/2021/08/12/some-memes-1/">
+      <a class="nav-right" href="/2021/08/12/some-memes-2/">
         
           来点宙尸梗
         
@@ -178,7 +179,9 @@
         'background-image': 'url(' + banner + ')'
       })
     } else {
-      $('#article-banner').geopattern(url)
+      var options = new Object()
+      options.color = "#ff6d00"
+      $('#article-banner').geopattern(url, options=options)
     }
     $('.header').removeClass('fixed-header')
 
