@@ -117,7 +117,9 @@
 <script>
   (function() {
     var url = 'http://www.yaokong47.xyz/project/index.html';
-    $('#article-banner').geopattern(url);
+    var options = new Object()
+    options.color = "#ffa000"
+    $('#article-banner').geopattern(url, options = options);
     $('.header').removeClass('fixed-header')
     $.ajax({
       headers: {
@@ -151,12 +153,15 @@
         $('#all-project').html(cardHtml)
         $('.card-header').each(function() {
           var name = $(this).data('name');
-          $(this).geopattern(name);
+          var options = new Object()
+          options.color = "#ffa000"
+          $(this).geopattern(name, options = options);
         })
       }
     });
   })()
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
