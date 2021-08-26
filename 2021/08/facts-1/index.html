@@ -10,7 +10,7 @@
   
   <title>
     
-      谣控堆积处
+      人 间 事 实 | 谣控堆积处
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -108,79 +108,134 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">Archives</p>
+  <h2>人 间 事 实</h2>
+  <p class="post-date">2021-08-12</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2021
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><ul>
+<li>347班是谣控们引以为豪的班级，这里有一些关于347的事实：</li>
+</ul>
+<ol>
+<li>在公历中，一年中的第347天是12月13日，而12月13日……</li>
+</ol>
+<p><img src="/img/12.13.jpg" alt="永远牢记"></p>
+<p>可能这就是347班谣控和日军一样残忍恶毒的原因吧</p>
+<ol start="2">
+<li>47一般指代AK47，恐怖分子的代表枪械</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2021/08/hyh/">
+        <span class="nav-arrow">← </span>
+        
+          黄云浩
+        
+      </a>
     
     
-      <div class="section-list-item">
-        <a href="/2021/08/things-yaokong-have-done/" class="archive-title">谣控都干了些什么</a>
-        <p class="archive-date">08-13</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/08/facts-1/" class="archive-title">人 间 事 实</a>
-        <p class="archive-date">08-12</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/08/hyh/" class="archive-title">黄云浩</a>
-        <p class="archive-date">08-11</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/yzy/" class="archive-title">阳子奕</a>
-        <p class="archive-date">07-28</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/pin-top/" class="archive-title">【置顶】【先读我】本站导航&amp;常见问题</a>
-        <p class="archive-date">07-28</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/zzc/" class="archive-title">赵梓川</a>
-        <p class="archive-date">07-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/memes-pics-2/" class="archive-title">来点弔图</a>
-        <p class="archive-date">07-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/memes-pics-1/" class="archive-title">来点弔图</a>
-        <p class="archive-date">07-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/07/memes-text/" class="archive-title">一些梗</a>
-        <p class="archive-date">07-18</p>
-      </div>
+      <a class="nav-right" href="/2021/08/things-yaokong-have-done/">
+        
+          谣控都干了些什么
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
-</section>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+    <!-- 二维码 END -->
+    
+      <!-- Utterances START -->
+      <div id="utterances"></div>
+      <script src="https://utteranc.es/client.js"
+        repo=""
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async></script>    
+      <!-- Utterances END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
   
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var options = new Object()
-    options.color = "#ffa000"
-    var url = 'http://www.yaokong47.xyz/archives/2021/08/index.html';
-    $('#article-banner').geopattern(url, options = options);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://www.yaokong47.xyz/2021/08/facts-1/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      var options = new Object()
+      options.color = "#ffa000"
+      $('#article-banner').geopattern(url, options=options)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', '/css/images/error_icon.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== '/css/images/error_icon.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
   })();
 </script>
+
+
+
+
+
+
 
     <div class="scroll-top">
   <span class="arrow-icon"></span>
